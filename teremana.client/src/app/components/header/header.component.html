@@ -1,0 +1,6 @@
+<div class="content">
+    <button *ngIf="!isUserRegistered()" (click)="loginClick()">Login</button>
+    <button *ngIf="!isUserRegistered()" (click)="registrationClick()">Register</button>
+    <button *ngIf="isUserRegistered()" (click)="logoutClick()">Log out</button>
+</div>
+

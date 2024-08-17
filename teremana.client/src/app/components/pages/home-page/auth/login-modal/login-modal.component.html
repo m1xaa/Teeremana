@@ -1,0 +1,17 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" id="email"/>
+
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" id="password"/>
+            <div class="button-container">
+                <button (click)="loginClick()">Login</button>
+                <button (click)="cancelClick()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+

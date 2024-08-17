@@ -1,1 +1,2 @@
 C:\Users\Korisnik\Desktop\Posao\Probni Zadatak\Teremana\teremana.client\obj\Debug\teremana.client.esproj.CoreCompileInputs.cache
+C:\Users\Korisnik\Desktop\Posao\Probni Zadatak\Teeremana\teremana.client\obj\Debug\teremana.client.esproj.CoreCompileInputs.cache

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Teremana.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18694d03e83f44c1a0c4bb6a97b830aad30a331a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Teremana.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Teremana.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

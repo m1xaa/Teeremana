@@ -1,0 +1,17 @@
+<app-header
+(login)="onShowLoginModal()"
+(registration)="onShowRegistrationModal()"
+(logout)="onLogout()"
+/>
+<router-outlet></router-outlet>
+<app-login-modal
+*ngIf="showLoginModal"
+(login)="onLogin($event)"
+(cancel)="onCancelLogin()"
+/>
+<app-registration-modal
+*ngIf="showRegistrationModal"
+(register)="onRegistration($event)"
+(cancel)="onCancelRegistration()"
+/>
+<app-footer></app-footer>
