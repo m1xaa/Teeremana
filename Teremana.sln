@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teremana.Server", "Teremana.Server\Teremana.Server.csproj", "{BC23FDB2-ABE8-4F7D-B46F-328A1CEC45C2}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "teremana.client", "teremana.client\teremana.client.esproj", "{183E0C56-2748-498F-AD5D-C2CC709C7770}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC23FDB2-ABE8-4F7D-B46F-328A1CEC45C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC23FDB2-ABE8-4F7D-B46F-328A1CEC45C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC23FDB2-ABE8-4F7D-B46F-328A1CEC45C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC23FDB2-ABE8-4F7D-B46F-328A1CEC45C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183E0C56-2748-498F-AD5D-C2CC709C7770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183E0C56-2748-498F-AD5D-C2CC709C7770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183E0C56-2748-498F-AD5D-C2CC709C7770}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{183E0C56-2748-498F-AD5D-C2CC709C7770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183E0C56-2748-498F-AD5D-C2CC709C7770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183E0C56-2748-498F-AD5D-C2CC709C7770}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51C992C4-1F83-474C-BF5F-C6B057E47219}
+	EndGlobalSection
+EndGlobal
