@@ -21,8 +21,10 @@ export class LoginModalComponent {
   }
 
   loginClick() {
-    if (!this.loginForm.valid) 
-      return;
+    if (!this.loginForm.valid) {
+      this.loginForm.markAllAsTouched();
+      return; 
+    }
     const loginRequest = {
       'email': this.loginForm.value.email,
       'password': this.loginForm.value.password,

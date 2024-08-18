@@ -47,3 +47,8 @@ button {
     color: var(--secondary-color);
     background-color: var(--primary-color);
 }
+
+.alert {
+    color: red;
+    text-align: left;
+}

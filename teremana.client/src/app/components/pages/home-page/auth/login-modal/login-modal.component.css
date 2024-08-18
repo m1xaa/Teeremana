@@ -48,3 +48,9 @@ button {
     background-color: var(--primary-color);
     border-radius: 5%;
 }
+
+
+.alert {
+    color: red;
+    text-align: left;
+}

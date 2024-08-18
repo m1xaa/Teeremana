@@ -23,8 +23,10 @@ export class RegistrationModalComponent {
   }
 
   registrationClick() {
-    if(!this.registrationForm.valid) 
-      return;
+    if (!this.registrationForm.valid) {
+      this.registrationForm.markAllAsTouched();
+      return; 
+    }
     const request: RegistrationRequest = {
       'name': this.registrationForm.value.name,
       'surname': this.registrationForm.value.surname,
