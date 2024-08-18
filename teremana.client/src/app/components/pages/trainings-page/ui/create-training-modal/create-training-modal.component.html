@@ -1,0 +1,26 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Create a band</h2>
+      <form [formGroup]="createTrainingForm">
+        <label for="type">Type</label>
+        <input id="type" formControlName="type" type="text" />
+
+        <label for="durationInMinutes">Duration(In Minutes)</label>
+        <input id="durationInMinutes" formControlName="durationInMinutes" type="number" />
+
+        <label for="difficulty">Difficulty</label>
+        <input id="difficulty" formControlName="difficulty" type="number" />
+
+        <label for="fatigue">Fatigue</label>
+        <input id="fatigue" formControlName="fatigue" type="number" />
+
+        <label for="dateTime">DateTime</label>
+        <input id="dateTime" formControlName="dateTime" type="datetime-local" />
+        <div class="button-row">
+          <button type="button" (click)="onCancel()">Cancel</button>
+          <button type="button" (click)="onCreate()">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

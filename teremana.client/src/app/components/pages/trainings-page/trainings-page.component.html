@@ -1,0 +1,24 @@
+<button class="create-button" (click)="onCreateTraining()">Create</button>
+<app-trainings-table
+  [trainings]="trainings"
+  (update)="onUpdateTraining($event)"
+  (delete)="onDeleteTraining($event)"
+/>
+<app-create-training-modal
+  *ngIf="showCreationModal"
+  (close)="onCloseCreationModal()"
+  (create)="onCreate($event)"
+/>
+<app-update-training-modal
+  *ngIf="showUpdateModal"
+  [training]="selectedTraining"
+  (close)="onCloseUpdateModal()"
+  (update)="onUpdate($event)"
+/>
+<app-delete-training-modal
+  *ngIf="showDeleteModal"
+  [training]="selectedTraining"
+  (close)="onCloseDeleteModal()"
+  (delete)="onDelete()"
+/>
+

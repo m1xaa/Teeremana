@@ -30,7 +30,10 @@
 
   <ItemGroup>
     <Folder Include="Database\Context\" />
+    <Folder Include="Dtos\Trainings\" />
+    <Folder Include="Repository\Trainings\" />
     <Folder Include="Repository\Users\" />
+    <Folder Include="Services\Trainings\" />
     <Folder Include="Services\Users\" />
   </ItemGroup>
 

@@ -6,7 +6,7 @@ namespace AngularWIthASP.Server.Repository.Users;
 
 public interface IUserRepository
 {
-
+    public Task<User> GetById(Guid id);
     Task<User> Register(User user);
 
 
