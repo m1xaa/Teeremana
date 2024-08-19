@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginRequest } from '../../../models/auth/login-request';
 import { RegistrationRequest } from '../../../models/auth/registration-request';
 import { AuthStateService } from '../../../services/auth-state.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -12,7 +13,7 @@ export class HomePageComponent {
   showLoginModal = false;
   showRegistrationModal = false;
 
-  constructor(private authState: AuthStateService) {
+  constructor(private authState: AuthStateService, private router: Router) {
   }
 
   onLogin(loginRequest: LoginRequest) {
@@ -43,5 +44,13 @@ export class HomePageComponent {
 
   onLogout() {
     this.authState.logout();
+  }
+
+  onProgress() {
+    this.router.navigate(['progress'])
+  }
+
+  onTrainings() {
+    this.router.navigate(['training'])
   }
 }

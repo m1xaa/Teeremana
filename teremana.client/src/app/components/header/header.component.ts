@@ -11,6 +11,8 @@ export class HeaderComponent {
   @Output() login = new EventEmitter<void>();
   @Output() registration = new EventEmitter<void>();
   @Output() logout =  new EventEmitter<void>();
+  @Output() trainings = new EventEmitter<void>();
+  @Output() progress = new EventEmitter<void>();
 
 
   loginClick() {
@@ -27,5 +29,13 @@ export class HeaderComponent {
 
   isUserRegistered() {
     return localStorage.getItem(userKey) != null;
+  }
+
+  visitTrainings() {
+    this.trainings.emit();
+  }
+
+  visitProgressPage() {
+    this.progress.emit();
   }
 }

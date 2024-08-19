@@ -4,6 +4,8 @@ import { Training } from '../models/as-is/training';
 import { Observable } from 'rxjs';
 import { CreateTrainingRequest } from '../models/trainings/create-training-request';
 import { UpdateTrainingRequest } from '../models/trainings/update-training-request';
+import { TrainingStatistics } from '../models/as-is/training-statistics';
+import { GetProgressRequest } from '../models/progress/get-progress-request';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +30,9 @@ export class TrainingService {
 
   update(id: string, request: UpdateTrainingRequest): Observable<Training> {
     return this.http.put<Training>(`${this.baseUrl}/${id}`, request);
+  }
+
+  checkProgress(userId: string, request: GetProgressRequest): Observable<TrainingStatistics[]> {
+    return this.http.post<TrainingStatistics[]>(`${this.baseUrl}/${userId}/statistics`, request);
   }
 }

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Teremana.Server.Models;
 using Teremana.Server.Services;
+using Teremena.Server.Dtos.Progress;
 using Teremena.Server.Dtos.Trainings;
 
 namespace Teremana.Server.Controllers
@@ -24,6 +25,12 @@ namespace Teremana.Server.Controllers
         {
             var trainings = await _trainingService.GetAllByUserId(userId);
             return Ok(trainings);
+        }
+
+        [HttpPost("{userId}/statistics")]
+        public string CheckProgress([FromBody] GetProgressRequest request, Guid userId)
+        {
+            return request.Month;
         }
 
         [HttpPost("")]

@@ -21,6 +21,8 @@ import { UpdateTrainingModalComponent } from './components/pages/trainings-page/
 import { DeleteTrainingModalComponent } from './components/pages/trainings-page/ui/delete-training-modal/delete-training-modal.component';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ProgressTableComponent } from './progress-table/progress-table.component';
+import { ProgressPageComponent } from './components/pages/progress-page/progress-page.component';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     TrainingsTableComponent,
     CreateTrainingModalComponent,
     UpdateTrainingModalComponent,
-    DeleteTrainingModalComponent
+    DeleteTrainingModalComponent,
+    ProgressPageComponent,
+    ProgressTableComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
