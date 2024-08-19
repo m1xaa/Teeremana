@@ -4,6 +4,7 @@ import { TrainingService } from '../../../services/training.service';
 import { User } from '../../../models/as-is/user';
 import { userKey } from '../../../constats';
 import { GetProgressRequest } from '../../../models/progress/get-progress-request';
+import { TrainingStatistics } from '../../../models/as-is/training-statistics';
 
 @Component({
   selector: 'app-progress-page',
@@ -12,6 +13,7 @@ import { GetProgressRequest } from '../../../models/progress/get-progress-reques
 })
 export class ProgressPageComponent {
 
+  statistics: TrainingStatistics[] = [];
   progressForm: FormGroup;
 
   constructor(private fb: FormBuilder, private trainingService: TrainingService) {
@@ -26,7 +28,10 @@ export class ProgressPageComponent {
     const request: GetProgressRequest = {
       month: this.progressForm.value.month
     }
-    this.trainingService.checkProgress(this.getUserId(), request).subscribe();
+    this.trainingService.checkProgress(this.getUserId(), request).subscribe(statistics => {
+      this.statistics = statistics;
+      console.log(statistics);
+    });
   }
 
   getUserId() {

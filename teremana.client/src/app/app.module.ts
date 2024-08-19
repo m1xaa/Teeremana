@@ -21,7 +21,7 @@ import { UpdateTrainingModalComponent } from './components/pages/trainings-page/
 import { DeleteTrainingModalComponent } from './components/pages/trainings-page/ui/delete-training-modal/delete-training-modal.component';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { ProgressTableComponent } from './progress-table/progress-table.component';
+import { ProgressTableComponent } from './components/pages/progress-page/ui/progress-table/progress-table.component';
 import { ProgressPageComponent } from './components/pages/progress-page/progress-page.component';
 
 
