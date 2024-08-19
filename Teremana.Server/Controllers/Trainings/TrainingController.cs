@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Teremana.Server.Models;
 using Teremana.Server.Services;
+using Teremana.Server.Services.Statistics;
 using Teremena.Server.Dtos.Progress;
 using Teremena.Server.Dtos.Trainings;
 
@@ -14,10 +15,12 @@ namespace Teremana.Server.Controllers
     public class TrainingController : ControllerBase
     {
         private readonly ITrainingService _trainingService;
+        private readonly ITrainingStatisticsService _trainingStatisticsService;
 
-        public TrainingController(ITrainingService trainingService)
+        public TrainingController(ITrainingService trainingService, ITrainingStatisticsService trainingStatisticsService)
         {
             _trainingService = trainingService;
+            _trainingStatisticsService = trainingStatisticsService;
         }
 
         [HttpGet("{userId}")]
@@ -28,9 +31,9 @@ namespace Teremana.Server.Controllers
         }
 
         [HttpPost("{userId}/statistics")]
-        public string CheckProgress([FromBody] GetProgressRequest request, Guid userId)
+        public List<TrainingStatistics> CheckProgress([FromBody] GetProgressRequest request, Guid userId)
         {
-            return request.Month;
+            return _trainingStatisticsService.GetStatistics(userId, request.Month);
         }
 
         [HttpPost("")]

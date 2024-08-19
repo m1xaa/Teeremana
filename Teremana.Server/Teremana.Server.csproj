@@ -32,9 +32,10 @@
     <Folder Include="Database\Context\" />
     <Folder Include="Dtos\Progress\" />
     <Folder Include="Dtos\Trainings\" />
+    <Folder Include="Helper\" />
     <Folder Include="Repository\Trainings\" />
     <Folder Include="Repository\Users\" />
-    <Folder Include="Services\Trainings\" />
+    <Folder Include="Services\Trainings\Statistics\" />
     <Folder Include="Services\Users\" />
   </ItemGroup>
 

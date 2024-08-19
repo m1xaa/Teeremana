@@ -4,6 +4,7 @@ using AngularWIthASP.Server.Services.Users;
 using Microsoft.EntityFrameworkCore;
 using Teremana.Server.Repositories;
 using Teremana.Server.Services;
+using Teremana.Server.Services.Statistics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,7 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ITrainingRepository, TrainingRepository>();
 builder.Services.AddScoped<ITrainingService, TrainingService>();
+builder.Services.AddScoped<ITrainingStatisticsService, TrainingStatisticsService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
