@@ -10,7 +10,7 @@ namespace Teremana.Server.Services
     {
         Task<IEnumerable<Training>> GetAllByUserId(Guid userId);
         Task<Training> Create(CreateTrainingRequest request);
-        Task<Training> Update(UpdateTrainingRequest request);
+        Task<Training> Update(UpdateTrainingRequest request, Guid id);
         Task Delete(Guid id);
     }
 }

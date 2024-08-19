@@ -19,7 +19,7 @@ namespace Teremana.Server.Controllers
             _trainingService = trainingService;
         }
 
-        [HttpGet("/{userId}")]
+        [HttpGet("{userId}")]
         public async Task<IActionResult> GetAllByUserId(Guid userId)
         {
             var trainings = await _trainingService.GetAllByUserId(userId);
@@ -37,19 +37,19 @@ namespace Teremana.Server.Controllers
             return Ok(training);
         }
 
-        [HttpPut("/{id}")]
-        public async Task<IActionResult> Update([FromBody] UpdateTrainingRequest request)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update([FromBody] UpdateTrainingRequest request, Guid id)
         {
             if (request == null)
             {
                 return BadRequest("Training is null");
             }
 
-            var updatedTraining = await _trainingService.Update(request);
+            var updatedTraining = await _trainingService.Update(request, id);
             return Ok(updatedTraining);
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _trainingService.Delete(id);

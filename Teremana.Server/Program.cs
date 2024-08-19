@@ -2,6 +2,8 @@ using AngularWIthASP.server.Database.Context;
 using AngularWIthASP.Server.Repository.Users;
 using AngularWIthASP.Server.Services.Users;
 using Microsoft.EntityFrameworkCore;
+using Teremana.Server.Repositories;
+using Teremana.Server.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +25,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITrainingRepository, TrainingRepository>();
+builder.Services.AddScoped<ITrainingService, TrainingService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

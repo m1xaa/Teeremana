@@ -47,5 +47,10 @@ namespace Teremana.Server.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<Training> GetbyId(Guid id)
+        {
+            return await _context.Trainings.FindAsync(id);
+        }
     }
 }

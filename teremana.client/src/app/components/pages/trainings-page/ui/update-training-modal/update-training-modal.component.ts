@@ -33,7 +33,7 @@ export class UpdateTrainingModalComponent {
       durationInMinutes: this.training.durationInMinutes,
       difficulty: this.training.difficulty,
       fatigue: this.training.fatigue,
-      dateTime: this.training.dateTime
+      dateTime: this.getAppropriateDateTime()
     })
   }
 
@@ -60,5 +60,9 @@ export class UpdateTrainingModalComponent {
   getUserId() {
     var user:User = JSON.parse(localStorage.getItem(userKey)!);
     return user.id;
+  }
+
+  getAppropriateDateTime() {
+    return this.training.dateTime.toString().slice(0, 16);
   }
 }

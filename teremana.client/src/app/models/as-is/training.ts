@@ -6,6 +6,6 @@ export interface Training {
     durationInMinutes: number;
     difficulty: number;
     fatigue: number;
-    dateTime: string;
+    dateTime: Date;
     user: User;
 }

@@ -3,6 +3,6 @@ export interface UpdateTrainingRequest {
     durationInMinutes: number;
     difficulty: number;
     fatigue: number;
-    dateTime: string;
+    dateTime: Date;
     userId: string;
 }
