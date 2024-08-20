@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../../../../../models/as-is/user';
 import { Person } from '../../../../../models/as-is/person';
 import { personKey } from '../../../../../constats';
+import { rangeValidator } from '../../../../../validators/range-validator';
 
 @Component({
   selector: 'app-create-training-modal',
@@ -21,8 +22,8 @@ export class CreateTrainingModalComponent {
     this.createTrainingForm = this.fb.group({
       type: ['', Validators.required],
       durationInMinutes: ['', Validators.required],
-      difficulty: ['', Validators.required],
-      fatigue: ['', Validators.required],
+      difficulty: ['', rangeValidator(1,10)],
+      fatigue: ['', rangeValidator(1,10)],
       dateTime: ['', Validators.required]
     });
   }

@@ -1,9 +1,6 @@
-<div class="container">
-    <button class="progress-button" (click)="onCheckProgress()">Check Progress</button>
-    <form [formGroup]="progressForm">
-        <input type="month" formControlName="month" id="month"/>
-    </form>
-</div>
+<app-progress-form-page
+(progress)="onCheckProgress($event)"
+/>
 <app-progress-table
 [statistics]="statistics"
 />

@@ -20,12 +20,12 @@
   
   label {
     display: block;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     font-size: 1.5rem;
+    text-align: left;
   }
   
   input {
-    padding: 8px;
     border-radius: 8px;
     outline: none;
     border-color: var(--accent-color);
@@ -67,3 +67,7 @@
     background-color: var(--secondary-color);
   }
   
+  .alert {
+    color: red;
+    text-align: left;
+}

@@ -14,20 +14,10 @@ import { personKey } from '../../../constats';
 export class ProgressPageComponent {
 
   statistics: TrainingStatistics[] = [];
-  progressForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private trainingService: TrainingService) {
-    this.progressForm = fb.group({
-      month: ['', Validators.required]
-    })
-  }
+  constructor(private trainingService: TrainingService) {}
 
-  onCheckProgress() {
-    if (!this.progressForm.valid)
-      return;
-    const request: GetProgressRequest = {
-      month: this.progressForm.value.month
-    }
+  onCheckProgress(request: GetProgressRequest) {
     this.trainingService.checkProgress(this.getPersonId().id, request).subscribe(statistics => {
       this.statistics = statistics;
     });

@@ -23,6 +23,7 @@ import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ProgressTableComponent } from './components/pages/progress-page/ui/progress-table/progress-table.component';
 import { ProgressPageComponent } from './components/pages/progress-page/progress-page.component';
+import { ProgressFormPageComponent } from './components/pages/progress-page/ui/progress-form-page/progress-form-page.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { ProgressPageComponent } from './components/pages/progress-page/progress
     UpdateTrainingModalComponent,
     DeleteTrainingModalComponent,
     ProgressPageComponent,
-    ProgressTableComponent
+    ProgressTableComponent,
+    ProgressFormPageComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

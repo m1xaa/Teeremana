@@ -6,6 +6,7 @@ import { defaultUrlMatcher } from '@angular/router';
 import { User } from '../../../../../models/as-is/user';
 import { personKey} from '../../../../../constats';
 import { Person } from '../../../../../models/as-is/person';
+import { rangeValidator } from '../../../../../validators/range-validator';
 
 @Component({
   selector: 'app-update-training-modal',
@@ -22,8 +23,8 @@ export class UpdateTrainingModalComponent {
     this.updateTrainingForm = this.fb.group({
       type: [this.training?.type, Validators.required],
       durationInMinutes: [this.training?.durationInMinutes, Validators.required],
-      difficulty: [this.training?.difficulty, Validators.required],
-      fatigue: [this.training?.fatigue, Validators.required],
+      difficulty: [this.training?.difficulty, rangeValidator(1,10)],
+      fatigue: [this.training?.fatigue, rangeValidator(1,10)],
       dateTime: [this.training?.dateTime, Validators.required]
     });
   }
