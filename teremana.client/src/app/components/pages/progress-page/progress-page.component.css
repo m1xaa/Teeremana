@@ -5,7 +5,13 @@
     gap: 2em;
 }
 
+label {
+  display: block;
+}
 
+input[type="range"] {
+  margin-top: 0px;
+}
   
 input {
     margin-top: 60px;

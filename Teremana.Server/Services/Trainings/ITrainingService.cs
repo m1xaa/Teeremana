@@ -8,7 +8,7 @@ namespace Teremana.Server.Services
 {
     public interface ITrainingService
     {
-        Task<IEnumerable<Training>> GetAllByUserId(Guid userId);
+        Task<IEnumerable<Training>> GetAllByPersonId(Guid personId);
         Task<Training> Create(CreateTrainingRequest request);
         Task<Training> Update(UpdateTrainingRequest request, Guid id);
         Task Delete(Guid id);

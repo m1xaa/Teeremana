@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Cors;
 using Teremana.Server.Models;
 using Teremena.Server.Dtos.Auth;
+using Teremana.Server.Services.People;
 
 namespace Teremana.Server.Controllers.Auth
 {
@@ -12,25 +13,24 @@ namespace Teremana.Server.Controllers.Auth
     public class AuthController : ControllerBase
     {
 
-        private readonly IUserService _userService;
+        private readonly IAuthService _authService;
 
-        public AuthController(IUserService userService)
+        public AuthController(IAuthService authService)
         {
-            _userService = userService;
+            _authService = authService;
         }
 
 
         [HttpPost("register")]
-        public async Task<User> Register([FromBody] RegistrationRequest request)
+        public async Task<Person> Register([FromBody] RegistrationRequest request)
         {
-            return await _userService.Register(new User(request.Name, request.Surname, request.Email, request.Password,
-                request.Birthdate));
+            return await _authService.Register(request);
         }
 
         [HttpPost("login")]
-        public async Task<User> Login([FromBody] Teremena.Server.Dtos.Auth.LoginRequest request)
+        public async Task<Person> Login([FromBody] Teremena.Server.Dtos.Auth.LoginRequest request)
         {
-            return await _userService.Login(request.Email, request.Password);
+            return await _authService.Login(request.Email, request.Password);
         }
     }
 }

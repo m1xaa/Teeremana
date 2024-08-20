@@ -17,19 +17,33 @@ namespace Teremana.Server.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<Training>> GetAllByUserId(Guid userId)
+        public async Task<IEnumerable<Training>> GetAllByPersonId(Guid personId)
         {
             return await _context.Trainings
-                .Where(t => t.User.Id == userId)
+                .Include(t => t.Person)
+                .Include(t => t.Person.User)
+                .Where(t => t.Person.Id == personId)
                 .ToListAsync();
         }
 
+
         public async Task<Training> Create(Training training)
         {
+            var person = await _context.People.FindAsync(training.Person.Id);
+            if (person != null)
+            {
+                training.Person = person; 
+            }
+            else
+            {
+                training.Person = new Person("", "", new DateOnly(1,1,1), new User("", ""));
+            }
+
             _context.Trainings.Add(training);
             await _context.SaveChangesAsync();
             return training;
         }
+
 
         public async Task<Training> Update(Training training)
         {

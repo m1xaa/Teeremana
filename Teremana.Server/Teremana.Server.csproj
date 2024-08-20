@@ -33,10 +33,10 @@
     <Folder Include="Dtos\Progress\" />
     <Folder Include="Dtos\Trainings\" />
     <Folder Include="Helper\" />
+    <Folder Include="Repository\People\" />
     <Folder Include="Repository\Trainings\" />
-    <Folder Include="Repository\Users\" />
+    <Folder Include="Services\People\" />
     <Folder Include="Services\Trainings\Statistics\" />
-    <Folder Include="Services\Users\" />
   </ItemGroup>
 
 </Project>

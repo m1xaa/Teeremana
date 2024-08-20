@@ -7,7 +7,7 @@ namespace Teremana.Server.Repositories
 {
     public interface ITrainingRepository
     {
-        Task<IEnumerable<Training>> GetAllByUserId(Guid userId);
+        Task<IEnumerable<Training>> GetAllByPersonId(Guid personId);
         Task<Training> GetbyId(Guid id);
         Task<Training> Create(Training training);
         Task<Training> Update(Training training);

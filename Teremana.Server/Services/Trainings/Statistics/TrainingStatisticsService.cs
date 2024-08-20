@@ -21,7 +21,7 @@ public class TrainingStatisticsService : ITrainingStatisticsService
     public List<Training> GetUserTrainingsForMonth(Guid id, string targetDate)
     {
         var date = this.ConvertTargetDate(targetDate);
-        var trainings = _trainingRepository.GetAllByUserId(id).Result;
+        var trainings = _trainingRepository.GetAllByPersonId(id).Result;
         var filteredTrainings = trainings
             .Where(t => t.DateTime.Year == date.Year && t.DateTime.Month == date.Month)
             .ToList();

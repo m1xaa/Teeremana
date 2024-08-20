@@ -17,13 +17,14 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<User> Users { get; set; }
     public DbSet<Training> Trainings { get; set; }
+    public DbSet<Person> People { get; set; }
 
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Training>()
-            .HasOne(t => t.User)
+            .HasOne(t => t.Person)
             .WithMany()
             .OnDelete(DeleteBehavior.Cascade);
     }

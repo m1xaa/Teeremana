@@ -1,3 +1,5 @@
+using System;
+
 namespace Teremana.Server.Models
 {
     public class Training
@@ -8,21 +10,21 @@ namespace Teremana.Server.Models
         public int Difficulty {  get; set; }
         public int Fatigue { get; set; }
         public DateTime DateTime { get; set; }
-        public User User { get; set; }
+        public Person Person { get; set; }
 
         public Training() { }
 
-        public Training(string type, int durationInMinutes, int difficulty, int fatigue, DateTime dateTime, User user)
+        public Training(string type, int durationInMinutes, int difficulty, int fatigue, DateTime dateTime, Person person)
         {
             Type = type;
             DurationInMinutes = durationInMinutes;
             Difficulty = difficulty;
             Fatigue = fatigue;
             DateTime = dateTime;
-            User = user;
+            Person = person;
         }
 
-        public Training(Guid id, string type, int durationInMinutes, int difficulty, int fatigue, DateTime dateTime, User user)
+        public Training(Guid id, string type, int durationInMinutes, int difficulty, int fatigue, DateTime dateTime, Person person)
         {
             Id = id;
             Type = type;
@@ -30,7 +32,7 @@ namespace Teremana.Server.Models
             Difficulty = difficulty;
             Fatigue = fatigue;
             DateTime = dateTime;
-            User = user;
+            Person = person;
         }
     }
 }

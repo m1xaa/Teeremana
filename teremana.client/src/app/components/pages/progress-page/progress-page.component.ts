@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TrainingService } from '../../../services/training.service';
-import { User } from '../../../models/as-is/user';
-import { userKey } from '../../../constats';
 import { GetProgressRequest } from '../../../models/progress/get-progress-request';
 import { TrainingStatistics } from '../../../models/as-is/training-statistics';
+import { Person } from '../../../models/as-is/person';
+import { personKey } from '../../../constats';
 
 @Component({
   selector: 'app-progress-page',
@@ -28,14 +28,13 @@ export class ProgressPageComponent {
     const request: GetProgressRequest = {
       month: this.progressForm.value.month
     }
-    this.trainingService.checkProgress(this.getUserId(), request).subscribe(statistics => {
+    this.trainingService.checkProgress(this.getPersonId().id, request).subscribe(statistics => {
       this.statistics = statistics;
-      console.log(statistics);
     });
   }
 
-  getUserId() {
-    var user:User = JSON.parse(localStorage.getItem(userKey)!);
-    return user.id;
+  getPersonId() {
+    var person: Person = JSON.parse(localStorage.getItem(personKey)!);
+    return person;
   }
 }

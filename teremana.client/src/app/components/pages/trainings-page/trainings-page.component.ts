@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Training } from '../../../models/as-is/training';
-import { TrainingService } from '../../../services/training.service';
-import { userKey } from '../../../constats';
-import { User } from '../../../models/as-is/user';
 import { CreateTrainingRequest } from '../../../models/trainings/create-training-request';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
@@ -10,6 +7,8 @@ import { AppState } from '../../../state/app.state';
 import { selectAllTrainings } from '../../../state/trainings/training.selectors';
 import { createTraining, deleteTraining, getTrainings, updateTraining } from '../../../state/trainings/training.actions';
 import { UpdateTrainingRequest } from '../../../models/trainings/update-training-request';
+import { personKey } from '../../../constats';
+import { Person } from '../../../models/as-is/person';
 
 @Component({
   selector: 'app-trainings-page',
@@ -28,13 +27,13 @@ export class TrainingsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var userId = this.getUserId();
-    this.store.dispatch(getTrainings({userId: userId}));
+    var personId = this.getPersonId();
+    this.store.dispatch(getTrainings({personId: personId}));
   }
 
-  getUserId() {
-    var user:User = JSON.parse(localStorage.getItem(userKey)!);
-    return user.id;
+  getPersonId() {
+    var person:Person = JSON.parse(localStorage.getItem(personKey)!);
+    return person.id;
   }
 
   onCreateTraining(): void {

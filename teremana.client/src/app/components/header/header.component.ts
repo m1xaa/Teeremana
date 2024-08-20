@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { userKey } from '../../constats';
+import { personKey } from '../../constats';
 
 @Component({
   selector: 'app-header',
@@ -28,7 +28,7 @@ export class HeaderComponent {
   }
 
   isUserRegistered() {
-    return localStorage.getItem(userKey) != null;
+    return localStorage.getItem(personKey) != null;
   }
 
   visitTrainings() {

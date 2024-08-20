@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using AngularWIthASP.Server.Repository.Users;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Teremana.Server.Models;
 using Teremana.Server.Repositories;
+using Teremana.Server.Repository.People;
 using Teremena.Server.Dtos.Trainings;
 
 namespace Teremana.Server.Services
@@ -13,32 +13,32 @@ namespace Teremana.Server.Services
     public class TrainingService : ITrainingService
     {
         private readonly ITrainingRepository _trainingRepository;
-        private readonly IUserRepository _userRepository;
+        private readonly IPersonRepository _personRepository;
 
-        public TrainingService(ITrainingRepository trainingRepository, IUserRepository userRepository)
+        public TrainingService(ITrainingRepository trainingRepository, IPersonRepository personRepository)
         {
             _trainingRepository = trainingRepository;
-            _userRepository = userRepository;
+            _personRepository = personRepository;
         }
-
-        public async Task<IEnumerable<Training>> GetAllByUserId(Guid userId)
-        {
-            return await _trainingRepository.GetAllByUserId(userId);
-        }
-
         public async Task<Training> Create(CreateTrainingRequest request)
         {
-            User user = _userRepository.GetById(request.UserId).Result;
+            Person person = _personRepository.GetById(request.personId).Result;
             Training training = new(request.Type, request.DurationInMinutes,
-                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), user);
+                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), person);
             return await _trainingRepository.Create(training);
         }
+        public async Task<IEnumerable<Training>> GetAllByPersonId(Guid personId)
+        {
+            return await _trainingRepository.GetAllByPersonId(personId);
+        }
+
+        
 
         public async Task<Training> Update(UpdateTrainingRequest request, Guid id)
         {
-            User user = _userRepository.GetById(request.UserId).Result;
+            var person = _personRepository.GetById(request.personId).Result;
             Training training = new(id, request.Type, request.DurationInMinutes,
-                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), user);
+                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), person);
             return await _trainingRepository.Update(training);
         }
 

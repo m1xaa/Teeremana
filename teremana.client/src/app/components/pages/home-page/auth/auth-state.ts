@@ -3,8 +3,8 @@ import { AuthService } from '../../../../services/auth.service';
 import { Router } from '@angular/router';
 import { LoginRequest } from '../../../../models/auth/login-request';
 import { RegistrationRequest } from '../../../../models/auth/registration-request';
-import { User } from '../../../../models/as-is/user';
-import { userKey } from '../../../../constats';
+import { Person } from '../../../../models/as-is/person';
+import { personKey } from '../../../../constats';
 
 
 @Injectable({
@@ -15,9 +15,9 @@ export class AuthStateService {
   constructor(private authService: AuthService, private router: Router) { }
 
   login(loginRequest: LoginRequest) {
-    this.authService.login(loginRequest).subscribe(user => {
-      if (user) {
-        this.storeUser(user);
+    this.authService.login(loginRequest).subscribe(person => {
+      if (person) {
+        this.storePerson(person);
         this.router.navigate(['training']);
       }
       else {
@@ -27,9 +27,9 @@ export class AuthStateService {
   }
 
   register(registrationRequest: RegistrationRequest) {
-    this.authService.register(registrationRequest).subscribe(user => {
-      if (user) {
-        this.storeUser(user);
+    this.authService.register(registrationRequest).subscribe(person => {
+      if (person) {
+        this.storePerson(person);
         this.router.navigate(['training']);
       } 
       else {
@@ -38,12 +38,12 @@ export class AuthStateService {
     });
   }
 
-  storeUser(user: User) {
-    localStorage.setItem(userKey, JSON.stringify(user));
+  storePerson(person: Person) {
+    localStorage.setItem(personKey, JSON.stringify(person));
   }
 
   logout() {
-    localStorage.removeItem(userKey);
+    localStorage.removeItem(personKey);
     this.router.navigate(['/']);
   }
 }

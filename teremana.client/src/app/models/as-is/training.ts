@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { Person } from "./person";
 
 export interface Training {
     id: string;
@@ -7,5 +7,5 @@ export interface Training {
     difficulty: number;
     fatigue: number;
     dateTime: Date;
-    user: User;
+    person: Person;
 }

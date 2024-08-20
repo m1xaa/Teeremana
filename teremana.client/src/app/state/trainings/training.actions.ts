@@ -52,7 +52,7 @@ export const deleteTrainingFailure = createAction(
 
 export const getTrainings = createAction(
     '[Training Page] Get trainings',
-    props<{userId: string}>()
+    props<{personId: string}>()
 )
 
 export const getTrainingsSuccess = createAction(

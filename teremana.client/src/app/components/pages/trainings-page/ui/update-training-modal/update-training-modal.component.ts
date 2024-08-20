@@ -4,7 +4,8 @@ import { UpdateTrainingRequest } from '../../../../../models/trainings/update-tr
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { defaultUrlMatcher } from '@angular/router';
 import { User } from '../../../../../models/as-is/user';
-import { userKey } from '../../../../../constats';
+import { personKey} from '../../../../../constats';
+import { Person } from '../../../../../models/as-is/person';
 
 @Component({
   selector: 'app-update-training-modal',
@@ -52,14 +53,14 @@ export class UpdateTrainingModalComponent {
       difficulty: this.updateTrainingForm.value.difficulty,
       fatigue: this.updateTrainingForm.value.fatigue,
       dateTime: this.updateTrainingForm.value.dateTime,
-      userId: this.getUserId()
+      personId: this.getPersonId()
     }
     this.update.emit(request);
   }
 
-  getUserId() {
-    var user:User = JSON.parse(localStorage.getItem(userKey)!);
-    return user.id;
+  getPersonId() {
+    var person:Person = JSON.parse(localStorage.getItem(personKey)!);
+    return person.id;
   }
 
   getAppropriateDateTime() {

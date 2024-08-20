@@ -16,7 +16,7 @@ export class TrainingEffects {
       this.actions$.pipe(
         ofType(getTrainings),
         switchMap(action =>
-          from(this.trainingService.getAllByUserId(action.userId)).pipe(
+          from(this.trainingService.getAllByUserId(action.personId)).pipe(
             map((trainings) => getTrainingsSuccess({ trainings: trainings })),
             catchError((error) => of(getTrainingsFailure({ error })))
           )

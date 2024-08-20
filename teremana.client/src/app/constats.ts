@@ -1,1 +1,1 @@
-export const userKey = 'currentUser';
+export const personKey = 'currentPerson';

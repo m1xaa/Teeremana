@@ -23,17 +23,17 @@ namespace Teremana.Server.Controllers
             _trainingStatisticsService = trainingStatisticsService;
         }
 
-        [HttpGet("{userId}")]
-        public async Task<IActionResult> GetAllByUserId(Guid userId)
+        [HttpGet("{personId}")]
+        public async Task<IActionResult> GetAllByPersonId(Guid personId)
         {
-            var trainings = await _trainingService.GetAllByUserId(userId);
+            var trainings = await _trainingService.GetAllByPersonId(personId);
             return Ok(trainings);
         }
 
-        [HttpPost("{userId}/statistics")]
-        public List<TrainingStatistics> CheckProgress([FromBody] GetProgressRequest request, Guid userId)
+        [HttpPost("{personId}/statistics")]
+        public List<TrainingStatistics> CheckProgress([FromBody] GetProgressRequest request, Guid personId)
         {
-            return _trainingStatisticsService.GetStatistics(userId, request.Month);
+            return _trainingStatisticsService.GetStatistics(personId, request.Month);
         }
 
         [HttpPost("")]

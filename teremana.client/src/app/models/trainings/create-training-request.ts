@@ -4,5 +4,5 @@ export interface CreateTrainingRequest {
     difficulty: number;
     fatigue: number;
     dateTime: Date;
-    userId: string;
+    personId: string;
 }
