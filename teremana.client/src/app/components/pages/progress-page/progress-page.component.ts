@@ -3,8 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TrainingService } from '../../../services/training.service';
 import { GetProgressRequest } from '../../../models/progress/get-progress-request';
 import { TrainingStatistics } from '../../../models/as-is/training-statistics';
-import { Person } from '../../../models/as-is/person';
-import { personKey } from '../../../constats';
+import { getPersonId } from '../../../helper/helper';
 
 @Component({
   selector: 'app-progress-page',
@@ -18,13 +17,8 @@ export class ProgressPageComponent {
   constructor(private trainingService: TrainingService) {}
 
   onCheckProgress(request: GetProgressRequest) {
-    this.trainingService.checkProgress(this.getPersonId().id, request).subscribe(statistics => {
+    this.trainingService.checkProgress(getPersonId(), request).subscribe(statistics => {
       this.statistics = statistics;
     });
-  }
-
-  getPersonId() {
-    var person: Person = JSON.parse(localStorage.getItem(personKey)!);
-    return person;
   }
 }

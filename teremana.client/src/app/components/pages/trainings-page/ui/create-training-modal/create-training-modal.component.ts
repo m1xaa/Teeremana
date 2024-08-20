@@ -1,10 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CreateTrainingRequest } from '../../../../../models/trainings/create-training-request';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from '../../../../../models/as-is/user';
-import { Person } from '../../../../../models/as-is/person';
-import { personKey } from '../../../../../constats';
 import { rangeValidator } from '../../../../../validators/range-validator';
+import { getPersonId } from '../../../../../helper/helper';
 
 @Component({
   selector: 'app-create-training-modal',
@@ -43,14 +41,9 @@ export class CreateTrainingModalComponent {
       difficulty: this.createTrainingForm.value.difficulty,
       fatigue: this.createTrainingForm.value.fatigue,
       dateTime: this.createTrainingForm.value.dateTime,
-      personId: this.getPersonId()
+      personId: getPersonId()
     }
     console.log(request);
     this.create.emit(request);
-  }
-
-  getPersonId() {
-    var person: Person = JSON.parse(localStorage.getItem(personKey)!);
-    return person.id;
   }
 }

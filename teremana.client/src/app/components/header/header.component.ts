@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { personKey } from '../../constats';
+import { personKey } from '../../helper/helper';
 
 @Component({
   selector: 'app-header',

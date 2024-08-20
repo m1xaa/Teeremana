@@ -7,8 +7,7 @@ import { AppState } from '../../../state/app.state';
 import { selectAllTrainings } from '../../../state/trainings/training.selectors';
 import { createTraining, deleteTraining, getTrainings, updateTraining } from '../../../state/trainings/training.actions';
 import { UpdateTrainingRequest } from '../../../models/trainings/update-training-request';
-import { personKey } from '../../../constats';
-import { Person } from '../../../models/as-is/person';
+import { getPersonId } from '../../../helper/helper';
 
 @Component({
   selector: 'app-trainings-page',
@@ -27,13 +26,8 @@ export class TrainingsPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    var personId = this.getPersonId();
+    var personId = getPersonId();
     this.store.dispatch(getTrainings({personId: personId}));
-  }
-
-  getPersonId() {
-    var person:Person = JSON.parse(localStorage.getItem(personKey)!);
-    return person.id;
   }
 
   onCreateTraining(): void {
@@ -45,7 +39,7 @@ export class TrainingsPageComponent implements OnInit {
   }
 
   onCreate(request: CreateTrainingRequest): void {
-    this.store.dispatch(createTraining({request: request}));
+    this.store.dispatch(createTraining({request: request, personId: getPersonId()}));
     this.showCreationModal = false;
   }
 
@@ -59,7 +53,7 @@ export class TrainingsPageComponent implements OnInit {
   }
 
   onUpdate(request: UpdateTrainingRequest): void {
-    this.store.dispatch(updateTraining({request: request, id: this.selectedTraining.id}));
+    this.store.dispatch(updateTraining({request: request, id: this.selectedTraining.id, personId: getPersonId()}));
     this.showUpdateModal = false;
   }
 
@@ -73,7 +67,7 @@ export class TrainingsPageComponent implements OnInit {
   }
 
   onDelete(): void {
-    this.store.dispatch(deleteTraining({id: this.selectedTraining.id}));
+    this.store.dispatch(deleteTraining({id: this.selectedTraining.id, personId: getPersonId()}));
     this.showDeleteModal = false;
   }
 }

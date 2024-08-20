@@ -12,27 +12,27 @@ import { GetProgressRequest } from '../models/progress/get-progress-request';
 })
 export class TrainingService {
 
-  baseUrl: string = 'http://localhost:5117/api/v1/training'
+  baseUrl: string = 'http://localhost:5117/api/v1/people'
 
   constructor(private http: HttpClient) { }
 
   getAllByUserId(id: string): Observable<Training[]> {
-    return this.http.get<Training[]>(`${this.baseUrl}/${id}`);
+    return this.http.get<Training[]>(`${this.baseUrl}/${id}/trainings`);
   }
 
-  create(request: CreateTrainingRequest): Observable<Training> {
-    return this.http.post<Training>(this.baseUrl, request);
+  create(request: CreateTrainingRequest, personId: string): Observable<Training> {
+    return this.http.post<Training>(`${this.baseUrl}/${personId}/trainings`, request);
   }
 
-  delete(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  delete(id: string, personId: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${personId}/trainings/${id}`);
   }
 
-  update(id: string, request: UpdateTrainingRequest): Observable<Training> {
-    return this.http.put<Training>(`${this.baseUrl}/${id}`, request);
+  update(id: string, request: UpdateTrainingRequest, personId: string): Observable<Training> {
+    return this.http.put<Training>(`${this.baseUrl}/${personId}/trainings/${id}`, request);
   }
 
-  checkProgress(userId: string, request: GetProgressRequest): Observable<TrainingStatistics[]> {
-    return this.http.post<TrainingStatistics[]>(`${this.baseUrl}/${userId}/statistics`, request);
+  checkProgress(personId: string, request: GetProgressRequest): Observable<TrainingStatistics[]> {
+    return this.http.post<TrainingStatistics[]>(`${this.baseUrl}/${personId}/trainings/statistics`, request);
   }
 }

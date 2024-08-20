@@ -2,11 +2,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Training } from '../../../../../models/as-is/training';
 import { UpdateTrainingRequest } from '../../../../../models/trainings/update-training-request';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { defaultUrlMatcher } from '@angular/router';
-import { User } from '../../../../../models/as-is/user';
-import { personKey} from '../../../../../constats';
 import { Person } from '../../../../../models/as-is/person';
 import { rangeValidator } from '../../../../../validators/range-validator';
+import { getPersonId } from '../../../../../helper/helper';
 
 @Component({
   selector: 'app-update-training-modal',
@@ -54,14 +52,9 @@ export class UpdateTrainingModalComponent {
       difficulty: this.updateTrainingForm.value.difficulty,
       fatigue: this.updateTrainingForm.value.fatigue,
       dateTime: this.updateTrainingForm.value.dateTime,
-      personId: this.getPersonId()
+      personId: getPersonId()
     }
     this.update.emit(request);
-  }
-
-  getPersonId() {
-    var person:Person = JSON.parse(localStorage.getItem(personKey)!);
-    return person.id;
   }
 
   getAppropriateDateTime() {

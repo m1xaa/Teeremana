@@ -11,32 +11,24 @@ using Teremena.Server.Dtos.Trainings;
 namespace Teremana.Server.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [Route("api/v1/people")]
     public class TrainingController : ControllerBase
     {
         private readonly ITrainingService _trainingService;
-        private readonly ITrainingStatisticsService _trainingStatisticsService;
 
-        public TrainingController(ITrainingService trainingService, ITrainingStatisticsService trainingStatisticsService)
+        public TrainingController(ITrainingService trainingService)
         {
             _trainingService = trainingService;
-            _trainingStatisticsService = trainingStatisticsService;
         }
 
-        [HttpGet("{personId}")]
+        [HttpGet("{personId}/trainings")]
         public async Task<IActionResult> GetAllByPersonId(Guid personId)
         {
             var trainings = await _trainingService.GetAllByPersonId(personId);
             return Ok(trainings);
         }
 
-        [HttpPost("{personId}/statistics")]
-        public List<TrainingStatistics> CheckProgress([FromBody] GetProgressRequest request, Guid personId)
-        {
-            return _trainingStatisticsService.GetStatistics(personId, request.Month);
-        }
-
-        [HttpPost("")]
+        [HttpPost("{personId}/trainings")]
         public async Task<IActionResult> Create([FromBody] CreateTrainingRequest request)
         {
             if (request == null)
@@ -47,7 +39,7 @@ namespace Teremana.Server.Controllers
             return Ok(training);
         }
 
-        [HttpPut("{id}")]
+        [HttpPut("{personId}/trainings/{id}")]
         public async Task<IActionResult> Update([FromBody] UpdateTrainingRequest request, Guid id)
         {
             if (request == null)
@@ -59,7 +51,7 @@ namespace Teremana.Server.Controllers
             return Ok(updatedTraining);
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{personId}/trainings/{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _trainingService.Delete(id);

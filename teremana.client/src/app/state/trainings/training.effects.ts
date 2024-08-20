@@ -28,7 +28,7 @@ export class TrainingEffects {
       this.actions$.pipe(
           ofType(createTraining),
           switchMap(action => 
-              from(this.trainingService.create(action.request)).pipe(
+              from(this.trainingService.create(action.request, action.personId)).pipe(
                 map((training) => createTrainingSuccess({ training: training})),
                 catchError((error) => of(createTrainingFailure({ error })))
               )
@@ -40,7 +40,7 @@ export class TrainingEffects {
     this.actions$.pipe(
         ofType(updateTraining),
         switchMap(action => 
-            from(this.trainingService.update(action.id, action.request)).pipe(
+            from(this.trainingService.update(action.id, action.request, action.personId)).pipe(
               map((training) => updateTrainingSuccess({ training: training})),
               catchError((error) => of(updateTrainingFailure({ error })))
             )
@@ -52,7 +52,7 @@ export class TrainingEffects {
     this.actions$.pipe(
       ofType(deleteTraining),
       switchMap(action => 
-          from(this.trainingService.delete(action.id)).pipe(
+          from(this.trainingService.delete(action.id, action.personId)).pipe(
             map(() => deleteTrainingSuccess({ id: action.id})),
             catchError((error) => of(deleteTrainingFailure({ error })))
           )

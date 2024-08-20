@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 import { LoginRequest } from '../models/auth/login-request';
 import { RegistrationRequest } from '../models/auth/registration-request';
 import { Person } from '../models/as-is/person';
-import { personKey } from '../constats';
+import { personKey } from '../helper/helper';
 
 
 

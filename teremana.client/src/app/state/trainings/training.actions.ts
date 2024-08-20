@@ -5,7 +5,10 @@ import { UpdateTrainingRequest } from "../../models/trainings/update-training-re
 
 export const createTraining = createAction(
     '[Training Page] Create training',
-    props<{request: CreateTrainingRequest}>()
+    props<{
+        request: CreateTrainingRequest
+        personId: string
+    }>()
 )
 
 export const createTrainingSuccess = createAction(
@@ -22,7 +25,9 @@ export const updateTraining = createAction(
     '[Training Page] Update training',
     props<{
         request: UpdateTrainingRequest,
-        id: string}>()
+        id: string
+        personId: string
+    }>()
 )
 
 export const updateTrainingSuccess = createAction(
@@ -37,7 +42,10 @@ export const updateTrainingFailure = createAction(
 
 export const deleteTraining = createAction(
     '[Training Page] Delete training',
-    props<{id: string}>()
+    props<{
+        id: string,
+        personId: string
+    }>()
 )
 
 export const deleteTrainingSuccess = createAction(
