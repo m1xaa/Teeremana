@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Teremana.Server.Models;
 
-namespace Teremana.Server.Repositories
+namespace Teremana.Server.Repository.Trainings
 {
     public interface ITrainingRepository
     {

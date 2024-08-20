@@ -2,13 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Teremana.Server.Dtos.Trainings.Progress;
 using Teremana.Server.Models;
 using Teremana.Server.Services;
-using Teremana.Server.Services.Statistics;
-using Teremena.Server.Dtos.Progress;
+using Teremana.Server.Services.Trainings.Progress;
 using Teremena.Server.Dtos.Trainings;
 
-namespace Teremana.Server.Controllers.Progress
+namespace Teremana.Server.Controllers.Trainings.Progress
 {
     [ApiController]
     [Route("api/v1/people")]

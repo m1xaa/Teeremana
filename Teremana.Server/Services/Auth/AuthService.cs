@@ -6,7 +6,7 @@ using Teremana.Server.Models;
 using Teremana.Server.Services.People;
 using Teremena.Server.Dtos.Auth;
 
-namespace AngularWIthASP.Server.Services.Users;
+namespace AngularWIthASP.Server.Services.Auth;
 
 public class AuthService : IAuthService
 {

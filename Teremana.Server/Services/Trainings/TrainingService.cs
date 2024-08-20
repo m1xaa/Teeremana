@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Teremana.Server.Models;
-using Teremana.Server.Repositories;
 using Teremana.Server.Repository.People;
+using Teremana.Server.Repository.Trainings;
 using Teremena.Server.Dtos.Trainings;
 
 namespace Teremana.Server.Services

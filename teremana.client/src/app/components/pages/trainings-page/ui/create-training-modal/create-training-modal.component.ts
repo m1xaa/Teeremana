@@ -43,7 +43,6 @@ export class CreateTrainingModalComponent {
       dateTime: this.createTrainingForm.value.dateTime,
       personId: getPersonId()
     }
-    console.log(request);
     this.create.emit(request);
   }
 }

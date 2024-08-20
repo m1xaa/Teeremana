@@ -6,7 +6,7 @@ using AngularWIthASP.server.Database.Context;
 using Microsoft.EntityFrameworkCore;
 using Teremana.Server.Models;
 
-namespace Teremana.Server.Repositories
+namespace Teremana.Server.Repository.Trainings
 {
     public class TrainingRepository : ITrainingRepository
     {

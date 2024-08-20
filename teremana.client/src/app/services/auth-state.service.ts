@@ -19,7 +19,6 @@ export class AuthStateService {
     this.authService.login(loginRequest).subscribe(person => {
       if (person) {
         this.storePerson(person);
-        console.log(person);
         this.router.navigate(['training']);
       }
       else {

@@ -1,8 +1,8 @@
 using Teremana.Helper;
+using Teremana.Server.Dtos.Trainings.Progress;
 using Teremana.Server.Models;
-using Teremana.Server.Repositories;
-using Teremana.Server.Services.Statistics;
-using Teremena.Server.Dtos.Progress;
+using Teremana.Server.Repository.Trainings;
+using Teremana.Server.Services.Trainings.Progress;
 
 public class TrainingStatisticsService : ITrainingStatisticsService
 {

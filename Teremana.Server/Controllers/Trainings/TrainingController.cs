@@ -4,11 +4,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Teremana.Server.Models;
 using Teremana.Server.Services;
-using Teremana.Server.Services.Statistics;
-using Teremena.Server.Dtos.Progress;
 using Teremena.Server.Dtos.Trainings;
 
-namespace Teremana.Server.Controllers
+namespace Teremana.Server.Controllers.Trainings
 {
     [ApiController]
     [Route("api/v1/people")]

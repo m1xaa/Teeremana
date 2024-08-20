@@ -31,8 +31,4 @@ export class TrainingService {
   update(id: string, request: UpdateTrainingRequest, personId: string): Observable<Training> {
     return this.http.put<Training>(`${this.baseUrl}/${personId}/trainings/${id}`, request);
   }
-
-  checkProgress(personId: string, request: GetProgressRequest): Observable<TrainingStatistics[]> {
-    return this.http.post<TrainingStatistics[]>(`${this.baseUrl}/${personId}/trainings/statistics`, request);
-  }
 }

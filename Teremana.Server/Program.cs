@@ -1,12 +1,12 @@
 using AngularWIthASP.server.Database.Context;
 using AngularWIthASP.Server.Repository.Auth;
-using AngularWIthASP.Server.Services.Users;
+using AngularWIthASP.Server.Services.Auth;
 using Microsoft.EntityFrameworkCore;
-using Teremana.Server.Repositories;
 using Teremana.Server.Repository.People;
+using Teremana.Server.Repository.Trainings;
 using Teremana.Server.Services;
 using Teremana.Server.Services.People;
-using Teremana.Server.Services.Statistics;
+using Teremana.Server.Services.Trainings.Progress;
 
 var builder = WebApplication.CreateBuilder(args);
 
