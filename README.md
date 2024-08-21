@@ -6,9 +6,10 @@ A small project assigned by WeDoSoftware as part of the interview process. The p
 
 ## Prerequisites
 
--Docker
--ASP .NET
--Angular
+-Docker  
+-ASP .NET 8.0  
+-Angular  
+
 
 ## Running The Application
 
