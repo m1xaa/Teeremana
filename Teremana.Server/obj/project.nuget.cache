@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8A1H4C3szHv27OEPKN6O1pLY79/J7/0yoUNoV+8ql2C2l/OhynyzFl30b/8pRKiYFSJKSyC3h7knXyhV8Vw5sw==",
+  "dgSpecHash": "dfP1tknagsM16hkdCQPz6D06v505TgzclzpQOAVOYgTOzeo4xzVH5v5RU1tACvZPlA3ebqbDG9IsDyRFVN/lTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teremana\\teremana.Server\\Teremana.Server.csproj",
+  "projectFilePath": "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\Teremana.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Korisnik\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Korisnik\\.nuget\\packages\\microsoft.aspnetcore.spaproxy\\8.0.8\\microsoft.aspnetcore.spaproxy.8.0.8.nupkg.sha512",

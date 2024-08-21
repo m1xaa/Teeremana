@@ -1,0 +1,47 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+      <h2>Insert Training</h2>
+      <form [formGroup]="createTrainingForm">
+        <label for="type">Type</label>
+        <input id="type" formControlName="type" type="text" />
+        <div *ngIf="createTrainingForm.get('type')!.invalid && (createTrainingForm.get('type')!.dirty || createTrainingForm.get('type')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('type')!.errors?.['required']">Type is required.</div>
+        </div>
+
+        <label for="durationInMinutes">Duration(In Minutes)</label>
+        <input id="durationInMinutes" formControlName="durationInMinutes" type="number" />
+        <div *ngIf="createTrainingForm.get('durationInMinutes')!.invalid && (createTrainingForm.get('durationInMinutes')!.dirty || createTrainingForm.get('durationInMinutes')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('durationInMinutes')!.errors?.['required']">Duration is required.</div>
+        </div>
+
+        <label for="difficulty">Difficulty</label>
+        <input id="difficulty" formControlName="difficulty" type="number" />
+        <div *ngIf="createTrainingForm.get('difficulty')!.invalid && (createTrainingForm.get('difficulty')!.dirty || createTrainingForm.get('difficulty')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('difficulty')!.errors?.['rangeError']">Difficulty needs to be 1-10.</div>
+        </div>
+
+        <label for="fatigue">Fatigue</label>
+        <input id="fatigue" formControlName="fatigue" type="number" />
+        <div *ngIf="createTrainingForm.get('fatigue')!.invalid && (createTrainingForm.get('fatigue')!.dirty || createTrainingForm.get('fatigue')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('fatigue')!.errors?.['rangeError']">Fatigue needs to be 1-10.</div>
+        </div>
+
+        <label for="caloriesBurnt">Calories Burnt</label>
+        <input id="caloriesBurnt" formControlName="caloriesBurnt" type="number" />
+        <div *ngIf="createTrainingForm.get('caloriesBurnt')!.invalid && (createTrainingForm.get('caloriesBurnt')!.dirty || createTrainingForm.get('caloriesBurnt')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('caloriesBurnt')!.errors?.['required']">Calories are required.</div>
+        </div>
+
+        <label for="dateTime">DateTime</label>
+        <input id="dateTime" formControlName="dateTime" type="datetime-local" />
+        <div *ngIf="createTrainingForm.get('dateTime')!.invalid && (createTrainingForm.get('dateTime')!.dirty || createTrainingForm.get('dateTime')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('dateTime')!.errors?.['required']">Date is required.</div>
+        </div>
+        <div class="button-row">
+          <button type="button" (click)="onCancel()">Cancel</button>
+          <button type="button" (click)="onCreate()">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

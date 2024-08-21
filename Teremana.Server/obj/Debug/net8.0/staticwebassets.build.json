@@ -1,20 +1,20 @@
 {
   "Version": 1,
-  "Hash": "jWjZZ7KZ5Y3nuQQg/MDOsdHR5Gkivj5TnvjYCuW43lg=",
+  "Hash": "ap0LWb+GdGS5Jbc9jN3b8awOBT4TpiKx51R5Dr9GQU4=",
   "Source": "Teremana.Server",
   "BasePath": "_content/Teremana.Server",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teremana\\teremana.client\\teremana.client.esproj",
+      "Identity": "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\teremana.client\\teremana.client.esproj",
       "Version": 2,
       "Source": "teremana.client",
       "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],

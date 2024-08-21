@@ -1,0 +1,24 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm">
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" id="email"/>
+            <div *ngIf="loginForm.get('email')!.invalid && (loginForm.get('email')!.dirty || loginForm.get('email')!.touched)" class="alert">
+                <div *ngIf="loginForm.get('email')!.errors?.['required']">Email is required.</div>
+            </div>
+
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" id="password"/>
+            <div *ngIf="loginForm.get('password')!.invalid && (loginForm.get('password')!.dirty || loginForm.get('password')!.touched)" class="alert">
+                <div *ngIf="loginForm.get('password')!.errors?.['required']">Password is required.</div>
+            </div>
+            
+            <div class="button-row">
+                <button (click)="loginClick()">Login</button>
+                <button (click)="cancelClick()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+

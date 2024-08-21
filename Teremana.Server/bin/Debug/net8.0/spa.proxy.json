@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:4200",
 "RedirectUrl": "",
 "LaunchCommand": "npm start",
-"WorkingDirectory": "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teremana\\teremana.Server\\..\\teremana.client",
+"WorkingDirectory": "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\..\\teremana.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

@@ -1,0 +1,21 @@
+<table class="statistics-table">
+    <thead>
+    <tr>
+      <th>Week</th>
+      <th>Total Duration(In Minutes)</th>
+      <th>Number Of Trainings</th>
+      <th>Average Fatigue</th>
+      <th>Average Difficulty</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let statistic of statistics">
+      <td>{{ statistic.weekNumber }}</td>
+      <td>{{ statistic.totalDuration }}</td>
+      <td>{{ statistic.numberOfTrainings }}</td>
+      <td>{{ statistic.averageFatigue}}</td>
+      <td>{{ statistic.averageDifficulty }}</td>
+    </tr>
+    </tbody>
+  </table>
+

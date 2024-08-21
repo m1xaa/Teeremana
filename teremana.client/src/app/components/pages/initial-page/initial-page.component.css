@@ -1,0 +1,10 @@
+img {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 20vw; 
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 8%;
+}

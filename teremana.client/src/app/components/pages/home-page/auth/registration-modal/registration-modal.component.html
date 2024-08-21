@@ -1,0 +1,42 @@
+<div class="modal-overlay">
+    <div class="modal-content">
+        <h2>Register</h2>
+        <form [formGroup]="registrationForm">
+            <label for="name">Name</label>
+            <input type="text" formControlName="name" id="name"/>
+            <div *ngIf="registrationForm.get('name')!.invalid && (registrationForm.get('name')!.dirty || registrationForm.get('name')!.touched)" class="alert">
+                <div *ngIf="registrationForm.get('name')!.errors?.['required']">Name is required.</div>
+            </div>
+
+            <label for="surname">Surname</label>
+            <input type="text" formControlName="surname" id="surname"/>
+            <div *ngIf="registrationForm.get('surname')!.invalid && (registrationForm.get('surname')!.dirty || registrationForm.get('surname')!.touched)" class="alert">
+                <div *ngIf="registrationForm.get('surname')!.errors?.['required']">Surname is required.</div>
+            </div>
+
+            <label for="email">Email</label>
+            <input type="text" formControlName="email" id="email"/>
+            <div *ngIf="registrationForm.get('email')!.invalid && (registrationForm.get('email')!.dirty || registrationForm.get('email')!.touched)" class="alert">
+                <div *ngIf="registrationForm.get('email')!.errors?.['required']">Email is required.</div>
+            </div>
+
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" id="password"/>
+            <div *ngIf="registrationForm.get('password')!.invalid && (registrationForm.get('password')!.dirty || registrationForm.get('password')!.touched)" class="alert">
+                <div *ngIf="registrationForm.get('password')!.errors?.['required']">Password is required.</div>
+            </div>
+
+            <label for="birthdate">Birthdate</label>
+            <input type="date" formControlName="birthdate" id="birthdate"/>
+            <div *ngIf="registrationForm.get('birthdate')!.invalid && (registrationForm.get('birthdate')!.dirty || registrationForm.get('birthdate')!.touched)" class="alert">
+                <div *ngIf="registrationForm.get('birthdate')!.errors?.['required']">Birthdate is required.</div>
+            </div>
+
+            <div class="button-row">
+                <button (click)="registrationClick()">Register</button>
+                <button (click)="cancelClick()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+

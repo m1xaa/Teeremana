@@ -29,9 +29,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\Trainings\Progress\" />
     <Folder Include="Database\Context\" />
-    <Folder Include="Repository\Users\" />
-    <Folder Include="Services\Users\" />
+    <Folder Include="Dtos\Trainings\Progress\" />
+    <Folder Include="Helper\" />
+    <Folder Include="Repository\People\" />
+    <Folder Include="Repository\Trainings\" />
+    <Folder Include="Services\People\" />
+    <Folder Include="Services\Trainings\Progress\" />
   </ItemGroup>
 
 </Project>
