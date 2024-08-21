@@ -1,6 +1,6 @@
 <div class="modal-overlay">
     <div class="modal-content">
-      <h2>Create a band</h2>
+      <h2>Insert Training</h2>
       <form [formGroup]="createTrainingForm">
         <label for="type">Type</label>
         <input id="type" formControlName="type" type="text" />
@@ -24,6 +24,12 @@
         <input id="fatigue" formControlName="fatigue" type="number" />
         <div *ngIf="createTrainingForm.get('fatigue')!.invalid && (createTrainingForm.get('fatigue')!.dirty || createTrainingForm.get('fatigue')!.touched)" class="alert">
           <div *ngIf="createTrainingForm.get('fatigue')!.errors?.['rangeError']">Fatigue needs to be 1-10.</div>
+        </div>
+
+        <label for="caloriesBurnt">Calories Burnt</label>
+        <input id="caloriesBurnt" formControlName="caloriesBurnt" type="number" />
+        <div *ngIf="createTrainingForm.get('caloriesBurnt')!.invalid && (createTrainingForm.get('caloriesBurnt')!.dirty || createTrainingForm.get('caloriesBurnt')!.touched)" class="alert">
+          <div *ngIf="createTrainingForm.get('caloriesBurnt')!.errors?.['required']">Calories are required.</div>
         </div>
 
         <label for="dateTime">DateTime</label>

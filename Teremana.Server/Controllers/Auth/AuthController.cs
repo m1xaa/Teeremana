@@ -1,10 +1,6 @@
-
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Cors;
 using Teremana.Server.Models;
 using Teremena.Server.Dtos.Auth;
-using Teremana.Server.Services.People;
 
 namespace Teremana.Server.Controllers.Auth
 {

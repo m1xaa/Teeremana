@@ -15,22 +15,22 @@ public class AuthRepository : IAuthRepository
     {
         _context = context;
     }
-    public async Task<User> GetById(Guid id)
+    public async Task<UserAccount> GetById(Guid id)
     {
-        return await _context.Users.FindAsync(id);
+        return await _context.UserAccounts.FindAsync(id);
     }
 
-    public async Task<User> Login(string email, string password)
+    public async Task<UserAccount> Login(string email, string password)
     {
-        return await _context.Users
+        return await _context.UserAccounts
             .Where(u => u.Email == email && u.Password == password)
             .FirstOrDefaultAsync();
     }
 
-    public async Task<User> Create(User user)
+    public async Task<UserAccount> Create(UserAccount account)
     {
-        var savedUser = _context.Users.Add(user);
+        var savedUser = _context.UserAccounts.Add(account);
         await _context.SaveChangesAsync();
-        return await GetById(user.Id);
+        return await GetById(account.Id);
     }
 }

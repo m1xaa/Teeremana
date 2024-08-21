@@ -17,9 +17,9 @@ namespace Teremana.Server.Services
         }
         public async Task<Training> Create(CreateTrainingRequest request)
         {
-            Person person = _personRepository.GetById(request.personId).Result;
+            Person person = _personRepository.GetById(request.PersonId).Result;
             Training training = new(request.Type, request.DurationInMinutes,
-                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), person);
+                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), request.CaloriesBurnt, person);
             return await _trainingRepository.Create(training);
         }
         public async Task<IEnumerable<Training>> GetAllByPersonId(Guid personId)
@@ -31,9 +31,9 @@ namespace Teremana.Server.Services
 
         public async Task<Training> Update(UpdateTrainingRequest request, Guid id)
         {
-            var person = _personRepository.GetById(request.personId).Result;
+            var person = _personRepository.GetById(request.PersonId).Result;
             Training training = new(id, request.Type, request.DurationInMinutes,
-                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), person);
+                request.Difficulty, request.Fatigue, request.DateTime.ToUniversalTime(), request.CaloriesBurnt, person);
             return await _trainingRepository.Update(training);
         }
 

@@ -26,6 +26,12 @@
           <div *ngIf="updateTrainingForm.get('fatigue')!.errors?.['rangeError']">Fatigue needs to be 1-10.</div>
         </div>
 
+        <label for="caloriesBurnt">Calories Burnt</label>
+        <input id="caloriesBurnt" formControlName="caloriesBurnt" type="number" />
+        <div *ngIf="updateTrainingForm.get('caloriesBurnt')!.invalid && (updateTrainingForm.get('caloriesBurnt')!.dirty || updateTrainingForm.get('caloriesBurnt')!.touched)" class="alert">
+          <div *ngIf="updateTrainingForm.get('caloriesBurnt')!.errors?.['required']">Calories are required.</div>
+        </div>
+
         <label for="dateTime">DateTime</label>
         <input id="dateTime" formControlName="dateTime" type="datetime-local" />
         <div *ngIf="updateTrainingForm.get('dateTime')!.invalid && (updateTrainingForm.get('dateTime')!.dirty || updateTrainingForm.get('dateTime')!.touched)" class="alert">

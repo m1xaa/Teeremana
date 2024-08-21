@@ -8,6 +8,6 @@ namespace Teremana.Server.Repository.People
         Task<Person> Create(Person person);
         Task Delete(Guid id);
         Task<Person> Update(Person person);
-        Task<Person> GetPersonByUser(User user);
+        Task<Person> GetPersonByUserAccount(UserAccount account);
     }
 }

@@ -6,6 +6,6 @@ namespace AngularWIthASP.Server.Repository.Auth;
 
 public interface IAuthRepository
 {
-    Task<User> Create(User user);
-    Task<User> Login(string email, string password);
+    Task<UserAccount> Create(UserAccount account);
+    Task<UserAccount> Login(string email, string password);
 }

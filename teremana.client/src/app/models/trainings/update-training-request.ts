@@ -4,5 +4,6 @@ export interface UpdateTrainingRequest {
     difficulty: number;
     fatigue: number;
     dateTime: Date;
+    caloriesBurnt: number;
     personId: string;
 }

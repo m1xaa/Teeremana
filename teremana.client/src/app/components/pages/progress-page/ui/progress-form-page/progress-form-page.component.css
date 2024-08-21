@@ -19,7 +19,7 @@ input {
     border-radius: 8px;
     outline: none;
     border-color: var(--highligth-color);
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .progress-button {
@@ -29,7 +29,7 @@ input {
     background: none;
     border-radius: 8px;
     padding: 0.5rem 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-transform: uppercase;
     cursor: pointer;
     margin-bottom: 1rem;

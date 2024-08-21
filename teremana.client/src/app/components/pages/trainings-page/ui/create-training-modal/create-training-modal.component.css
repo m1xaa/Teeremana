@@ -20,8 +20,8 @@
   
   label {
     display: block;
-    margin-top: 1rem;
-    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
     text-align: left;
   }
   
@@ -29,7 +29,7 @@
     border-radius: 8px;
     outline: none;
     border-color: var(--accent-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
   
   .button-row {

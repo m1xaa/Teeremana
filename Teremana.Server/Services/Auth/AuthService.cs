@@ -21,17 +21,17 @@ public class AuthService : IAuthService
     }
     public Task<Person> Register(RegistrationRequest request)
     {
-        var user = _authRepository.Create(new User(request.Email, request.Password)).Result;
-        return _personService.Create(new Person(request.Name, request.Surname, request.Birthdate, user));
+        var account = _authRepository.Create(new UserAccount(request.Email, request.Password)).Result;
+        return _personService.Create(new Person(request.Name, request.Surname, request.Birthdate, account));
     }
 
     public async Task<Person> Login(string email, string password)
     {
-        var user = await _authRepository.Login(email, password);
-        if (user == null)
+        var userAccount = await _authRepository.Login(email, password);
+        if (userAccount == null)
             return null;
 
-        return await _personService.GetPersonByUser(user);
+        return await _personService.GetPersonByUserAccount(userAccount);
     }
 
 }

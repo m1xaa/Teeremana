@@ -22,6 +22,7 @@ export class CreateTrainingModalComponent {
       durationInMinutes: ['', Validators.required],
       difficulty: ['', rangeValidator(1,10)],
       fatigue: ['', rangeValidator(1,10)],
+      caloriesBurnt: ['', Validators.required],
       dateTime: ['', Validators.required]
     });
   }
@@ -40,6 +41,7 @@ export class CreateTrainingModalComponent {
       durationInMinutes: this.createTrainingForm.value.durationInMinutes,
       difficulty: this.createTrainingForm.value.difficulty,
       fatigue: this.createTrainingForm.value.fatigue,
+      caloriesBurnt: this.createTrainingForm.value.caloriesBurnt,
       dateTime: this.createTrainingForm.value.dateTime,
       personId: getPersonId()
     }

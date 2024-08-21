@@ -30,9 +30,9 @@ namespace Teremana.Server.Services.People
             return await _personRepository.Update(person);
         }
 
-        public async Task<Person> GetPersonByUser(User user)
+        public async Task<Person> GetPersonByUserAccount(UserAccount account)
         {
-            return await _personRepository.GetPersonByUser(user);
+            return await _personRepository.GetPersonByUserAccount(account);
         }
     }
 }

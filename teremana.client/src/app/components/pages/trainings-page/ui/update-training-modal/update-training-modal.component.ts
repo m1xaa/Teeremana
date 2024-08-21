@@ -23,6 +23,7 @@ export class UpdateTrainingModalComponent {
       durationInMinutes: [this.training?.durationInMinutes, Validators.required],
       difficulty: [this.training?.difficulty, rangeValidator(1,10)],
       fatigue: [this.training?.fatigue, rangeValidator(1,10)],
+      caloriesBurnt: [this.training?.caloriesBurnt, Validators.required],
       dateTime: [this.training?.dateTime, Validators.required]
     });
   }
@@ -33,6 +34,7 @@ export class UpdateTrainingModalComponent {
       durationInMinutes: this.training.durationInMinutes,
       difficulty: this.training.difficulty,
       fatigue: this.training.fatigue,
+      caloriesBurnt: this.training.caloriesBurnt,
       dateTime: this.getAppropriateDateTime()
     })
   }
@@ -51,6 +53,7 @@ export class UpdateTrainingModalComponent {
       durationInMinutes: this.updateTrainingForm.value.durationInMinutes,
       difficulty: this.updateTrainingForm.value.difficulty,
       fatigue: this.updateTrainingForm.value.fatigue,
+      caloriesBurnt: this.updateTrainingForm.value.caloriesBurnt,
       dateTime: this.updateTrainingForm.value.dateTime,
       personId: getPersonId()
     }

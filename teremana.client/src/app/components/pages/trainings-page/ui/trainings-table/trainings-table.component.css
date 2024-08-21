@@ -12,7 +12,7 @@
   
   .trainings-table th {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   .trainings-table tr:hover td {
@@ -54,12 +54,5 @@
     font-size: 1rem;
     text-transform: uppercase;
     cursor: pointer;
-  }
-
-  table td img {
-    width: 40px; 
-    height: 40px;
-    border: 1px solid #fff;
-    object-fit: cover;
   }
   

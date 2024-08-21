@@ -7,5 +7,6 @@ export interface Training {
     difficulty: number;
     fatigue: number;
     dateTime: Date;
+    caloriesBurnt: number;
     person: Person;
 }

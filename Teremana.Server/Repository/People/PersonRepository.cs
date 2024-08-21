@@ -41,15 +41,15 @@ namespace Teremana.Server.Repository.People
             return person;
         }
 
-        public async Task<Person> GetPersonByUser(User user)
+        public async Task<Person> GetPersonByUserAccount(UserAccount account)
         {
-            return await _context.People.FirstOrDefaultAsync(p => p.User.Id == user.Id);
+            return await _context.People.FirstOrDefaultAsync(p => p.Account.Id == account.Id);
         }
 
         public async Task<Person> GetById(Guid id)
         {
             return await _context.People
-                .Include(p => p.User)
+                .Include(p => p.Account)
                 .FirstOrDefaultAsync(p => p.Id == id);
         }
     }

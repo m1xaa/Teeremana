@@ -21,7 +21,7 @@ namespace Teremana.Server.Repository.Trainings
         {
             return await _context.Trainings
                 .Include(t => t.Person)
-                .Include(t => t.Person.User)
+                .Include(t => t.Person.Account)
                 .Where(t => t.Person.Id == personId)
                 .ToListAsync();
         }
@@ -33,10 +33,6 @@ namespace Teremana.Server.Repository.Trainings
             if (person != null)
             {
                 training.Person = person; 
-            }
-            else
-            {
-                training.Person = new Person("", "", new DateOnly(1,1,1), new User("", ""));
             }
 
             _context.Trainings.Add(training);
