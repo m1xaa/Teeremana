@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teeremana\\Teremana.Server\\Teremana.Server.csproj": {}
+    "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\Teremana.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teeremana\\Teremana.Server\\Teremana.Server.csproj": {
+    "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\Teremana.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teeremana\\Teremana.Server\\Teremana.Server.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\Teremana.Server.csproj",
         "projectName": "Teremana.Server",
-        "projectPath": "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teeremana\\Teremana.Server\\Teremana.Server.csproj",
+        "projectPath": "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\Teremana.Server.csproj",
         "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Desktop\\Posao\\Probni Zadatak\\Teeremana\\Teremana.Server\\obj\\",
+        "outputPath": "C:\\Users\\Korisnik\\Desktop\\Posao\\New folder\\Teeremana\\Teremana.Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",

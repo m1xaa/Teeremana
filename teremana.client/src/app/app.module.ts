@@ -24,6 +24,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ProgressTableComponent } from './components/pages/progress-page/ui/progress-table/progress-table.component';
 import { ProgressPageComponent } from './components/pages/progress-page/progress-page.component';
 import { ProgressFormPageComponent } from './components/pages/progress-page/ui/progress-form-page/progress-form-page.component';
+import { InitialPageComponent } from './components/pages/initial-page/initial-page.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { ProgressFormPageComponent } from './components/pages/progress-page/ui/p
     DeleteTrainingModalComponent,
     ProgressPageComponent,
     ProgressTableComponent,
-    ProgressFormPageComponent
+    ProgressFormPageComponent,
+    InitialPageComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
