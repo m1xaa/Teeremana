@@ -13,6 +13,7 @@ A small project assigned by WeDoSoftware as part of the interview process. The p
 ## Running The Application
 
 1.  Start the database.
+
        Navigate to the directory where the Dockerfile is located and type in terminal (Don't change the ports)
 ```
       docker build -t your-image-name .
