@@ -21,9 +21,6 @@ export class AuthStateService {
         this.storePerson(person);
         this.router.navigate(['training']);
       }
-      else {
-        console.log("Error");
-      }
     }) 
   }
 
@@ -33,9 +30,6 @@ export class AuthStateService {
         this.storePerson(person);
         this.router.navigate(['training']);
       } 
-      else {
-        console.log("Error");
-      }
     });
   }
 
